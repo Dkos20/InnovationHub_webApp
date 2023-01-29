@@ -3,10 +3,10 @@
   "version": "0.0.0",
   "private": false,
   "scripts": {
-    "serve": "vite preview",
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "start": "serve dist"
   },
   "engines": {
     "node": "16.18.1"
