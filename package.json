@@ -29,6 +29,7 @@
   "devDependencies": {
     "@vitejs/plugin-vue": "^4.0.0",
     "@vitejs/plugin-vue-jsx": "^3.0.0",
+    "@vue/cli-service": "^5.0.8",
     "sass": "^1.57.1",
     "vite": "^4.0.0"
   }
