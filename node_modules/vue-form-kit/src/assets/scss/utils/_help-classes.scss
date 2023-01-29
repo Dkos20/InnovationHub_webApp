@@ -1,0 +1,49 @@
+.line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.line-clamp-4 {
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+}
+
+.drag-none {
+    -webkit-user-drag: none;
+    user-drag: none;
+}
+
+.blur {
+    -webkit-filter: blur(2px);
+    filter: blur(2px);
+}
+
+.bg-black-gradient {
+    background: rgba(0, 0, 0, 0.5);
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, #000000 100%);
+}
+
+.hover-underline {
+    @apply relative;
+    &:after {
+        content: '';
+        @apply h-px w-0 absolute top-full left-0 transition-all duration-500;
+        background-color: currentColor;
+    }
+    &:hover {
+        &:after {
+            @apply w-full;
+        }
+    }
+}

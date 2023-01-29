@@ -1,0 +1,82 @@
+@use "sass:math";
+
+/*
+<div class="burger-menu">
+    <span></span>
+    <span></span>
+    <span></span>
+    <span></span>
+</div>
+*/
+
+.burger-menu {
+  @apply block relative;
+  width: $formBurgerWidth;
+  height: $formBurgerTop*2 + $formBurgerHeight;
+  transition: 0.5s;
+  transition-delay: 0.5s;
+
+  #{$formBurgerOpenClass} & {
+    transform: rotate(45deg);
+  }
+
+
+  & > span {
+    @apply block absolute right-0;
+    height: $formBurgerHeight;
+    width: $formBurgerWidth;
+    transition: width 0.5s ease-in 0s, top 0.5s ease-in 1s, bottom 0.5s ease-in 1s, opacity 0.5s;
+
+    #{$formBurgerOpenClass} & {
+    }
+
+    &:nth-child(1) {
+      @apply top-0;
+      #{$formBurgerOpenClass} & {
+        transition-delay: 0s;
+        top: $formBurgerTop;
+        width: $formBurgerWidth;
+      }
+    }
+
+    &:nth-child(2) {
+      top: $formBurgerTop;
+      width: $formBurgerWidth;
+    }
+
+    &:nth-child(3) {
+      top: $formBurgerTop*2;
+
+      #{$formBurgerOpenClass} & {
+        transition-delay: 0s;
+        top: $formBurgerTop;
+        width: $formBurgerWidth;
+      }
+    }
+
+    &:nth-child(4) {
+      width: $formBurgerWidth;
+      opacity: 0;
+      transform: rotate(90deg);
+      transform-origin: top left;
+      left: $formBurgerTransformLeft;
+      top: -100px;
+      transition: top 0.5s ease-in 0s, opacity 0.5s ease-in 0s;
+
+      #{$formBurgerOpenClass} & {
+        opacity: 1;
+        top: $formBurgerTransformTop;
+        transition: top 0.5s ease-in 0.5s, opacity 0.5s ease-in 0.5s;
+
+      }
+    }
+  }
+
+  &:hover {
+    & > span {
+      @screen md {
+        width: $formBurgerWidth;
+      }
+    }
+  }
+}

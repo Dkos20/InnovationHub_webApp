@@ -1,0 +1,10 @@
+.burger-menu {
+  #{$formBurgerOpenClass} & {
+  }
+  & > span {
+    @apply bg-white;
+    #{$formBurgerOpenClass} & {
+      @apply bg-white #{!important};
+    }
+  }
+}

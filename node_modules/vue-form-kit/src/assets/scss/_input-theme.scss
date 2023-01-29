@@ -1,0 +1,39 @@
+.form-input {
+  &-label {
+    @apply font-medium;
+    &--required {
+      &:after {
+        @apply text-black;
+      }
+    }
+  }
+
+  &-text {
+    @apply rounded-lg;
+    @apply border-gray focus:border-black;
+    @apply placeholder-gray text-black;
+    @apply focus:ring-2 focus:ring-offset-2 focus:ring-black;
+
+    .has-validation-error & {
+      @apply border-black focus:border-black;
+    }
+  }
+
+  &-action {
+    @apply text-gray hover:text-black;
+  }
+
+}
+
+.form-validation-error {
+  @apply text-black text-sm;
+}
+
+.form-title {
+  @apply text-black;
+  @apply font-bold;
+}
+
+.form-separator {
+  @apply border-gray;
+}

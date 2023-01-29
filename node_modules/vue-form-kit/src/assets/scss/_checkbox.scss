@@ -1,0 +1,114 @@
+/*
+<label class="control control-checkbox relative">
+    <input
+        type="checkbox"
+        name="receive_notifications"
+        value="yes"
+    />
+    <div class="control_indicator"></div>
+    <span class="font-medium pl-2">I would like to receive notifications</span>
+</label>
+*/
+
+
+@keyframes s-ripple-dup {
+  0% {
+    transform: scale(0);
+  }
+  30% {
+    transform: scale(0.3);
+  }
+  60% {
+    transform: scale(0.6);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(1);
+  }
+}
+
+.control {
+  @apply select-none inline-block relative cursor-pointer text-base;
+  padding-left: remy(22);
+
+  &.disabled {
+    @apply cursor-default;
+  }
+
+  input {
+    @apply absolute opacity-0;
+    z-index: -1;
+
+    &:checked ~ .control_indicator {
+      &:before {
+        animation: s-ripple-dup 0.4s ease-out;
+      }
+    }
+
+    &:disabled ~ .control_indicator {
+      @apply pointer-events-none;
+    }
+
+    & ~ .control_indicator {
+      @apply absolute left-0 rounded-none border flex items-center justify-center;
+      top: 2px;
+      height: 20px;
+      width: 20px;
+      font-size: remy(17);
+
+      &:after {
+        @apply pointer-events-none box-border transition-all duration-500;
+      }
+      &:before {
+        @apply block absolute z-10;
+        content: '';
+        transition: all 0.5s;
+        width: 4.5rem;
+        height: 4.5rem;
+        left: -1.55rem;
+        top: -1.55rem;
+        border-radius: 3rem;
+        opacity: 0.6;
+        transform: scale(0);
+      }
+    }
+
+    &[type="checkbox"] {
+      &:checked ~ .control_indicator {
+        &:after {
+          @apply opacity-100;
+        }
+      }
+
+      & ~ .control_indicator {
+        @apply rounded-sm;
+
+        &:after {
+          @apply opacity-0 absolute;
+        }
+      }
+    }
+
+    &[type="radio"] {
+      &:checked ~ .control_indicator {
+        &:after {
+          @apply opacity-100;
+        }
+      }
+
+      & ~ .control_indicator {
+        @apply rounded-full;
+
+        &:after {
+          content: "";
+          @apply opacity-0;
+          @apply block absolute rounded-full;
+          @apply top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2;
+          width: 10px;
+          height: 10px;
+        }
+      }
+    }
+
+  }
+}

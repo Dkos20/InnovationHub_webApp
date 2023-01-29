@@ -1,0 +1,72 @@
+.x-selector {
+  $this: &;
+
+  &#{&}--small {
+    #{$this}__input {
+    }
+  }
+
+  @apply relative;
+
+  &.disabled {
+    @apply opacity-50 text-gray;
+    #{$this}__input {
+      @apply text-gray;
+    }
+  }
+
+  &__input {
+    @apply bg-white border-gray focus:border-black;
+    @apply rounded-lg shadow-sm;
+    @apply focus:ring-2 focus:ring-offset-2 focus:ring-black;
+
+    &.active {
+      @apply border-black;
+    }
+
+    .has-validation-error & {
+      @apply border-black focus:border-black;
+    }
+  }
+
+  &__label {
+  }
+
+  &__value {
+    @apply text-gray;
+  }
+
+  &__list {
+    @apply bg-white rounded-lg;
+    @apply border-black;
+    @apply shadow-lg shadow-black/50;
+  }
+
+  &__option {
+    @apply text-gray-dark;
+    &:not(:last-child) {
+      @apply border-b border-black;
+    }
+  }
+
+  &__option--no-select {
+    &:hover {
+      @apply bg-white #{!important};
+    }
+  }
+
+  &__option-value {
+  }
+
+  &__option-selected {
+    @apply text-black;
+  }
+
+  &__placeholder {
+    @apply text-gray;
+  }
+
+  &__drop-icon {
+    @apply text-black;
+  }
+}

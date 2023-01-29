@@ -1,0 +1,72 @@
+.x-selector {
+  $this: &;
+
+  &#{&}--small {
+    #{$this}__input {
+      height: $formInputSmallHeight;
+    }
+  }
+
+  @apply relative;
+
+  &.disabled {
+    @apply cursor-not-allowed;
+    #{$this}__input {
+      @apply cursor-not-allowed;
+    }
+
+    #{$this}__list {
+      @apply hidden;
+    }
+  }
+
+  &__input {
+    @apply cursor-pointer justify-between h-full px-4 border transition-all duration-500;
+    @apply px-3 py-2 flex items-center;
+    height: $formInputHeight;
+    @apply outline-none focus:outline-none;
+
+    &.active {}
+
+    .has-validation-error & {}
+  }
+
+  &__label {
+  }
+
+  &__value {
+  }
+
+  &__list {
+    @apply absolute left-0 flex flex-col min-w-full;
+    @apply border;
+    z-index: 35;
+    @apply overflow-y-auto overflow-x-hidden;
+    top: calc(100% + $formSelectListGap);
+    max-height: $formSelectList;
+  }
+
+  &__option {
+    @apply flex cursor-pointer relative items-center px-4 py-2 select-none;
+    &:not(:last-child) {
+    }
+  }
+
+  &__option--no-select {
+    @apply cursor-default #{!important};
+    &:hover {
+    }
+  }
+
+  &__option-value {
+    @apply flex-grow text-left h-full flex items-center leading-none;
+  }
+
+  &__option-selected {
+    @apply h-full flex items-center;
+  }
+
+  &__placeholder {
+    @apply select-none;
+  }
+}
