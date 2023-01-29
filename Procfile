@@ -1,1 +1,1 @@
-worker: npm run dev -p 5001
+web: npm run dev -p 5000
