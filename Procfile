@@ -1,1 +1,1 @@
-web: npm run dev -- --port 443
+web: npm run dev -- --port 8080
