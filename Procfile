@@ -1,1 +1,1 @@
-web: npm run dev -p 5000
+web: npm run dev -- --port 5000
