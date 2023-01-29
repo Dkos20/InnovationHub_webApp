@@ -11,7 +11,6 @@
   "engines": {
     "node": "16.18.1"
   },
-
   "dependencies": {
     "@babel/types": "^7.20.7",
     "@formkit/icons": "^1.0.0-beta.12",
@@ -21,6 +20,7 @@
     "axios": "^0.21.1",
     "bootstrap": "^5.2.3",
     "leaflet": "^1.9.3",
+    "serve": "^14.2.0",
     "vue": "^3.2.45",
     "vue-form-kit": "^1.1.12",
     "vue-router": "^4.1.6",
