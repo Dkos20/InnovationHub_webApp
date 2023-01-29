@@ -32,7 +32,7 @@ export default {
         {
           id: 2,
           name: "Aqsa Muzaffar Ahmed",
-          img: "src/assets/MicrosoftTeams-image.jpg",
+          img: "/MicrosoftTeams-image (1).jpg",
           description: "Back-End developer",
         },
         {
