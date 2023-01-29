@@ -38,7 +38,7 @@ export default {
         {
           id: 3,
           name: "Vera Koliverda",
-          img: "../assets/MicrosoftTeams-image.jpg",
+          img: "/MicrosoftTeams-image.jpg",
           description: "A.I. developer",
         },
       ],
