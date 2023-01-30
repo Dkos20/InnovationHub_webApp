@@ -58,7 +58,7 @@ export default {
     async handleSubmit() {
       try {
         const response = await axios.post(
-          "https://ac40-2a01-e0a-585-d830-d0ab-574e-7d8c-ff73.eu.ngrok.io/register",
+          "https://airbnb-calculator-backend.herokuapp.com/register",
           this.form
         );
         if (response.data === "success") {

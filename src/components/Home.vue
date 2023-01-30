@@ -254,7 +254,7 @@ export default {
         this.longitude = response.data.results[0].geometry.location.lng;
         this.latitude = response.data.results[0].geometry.location.lat;
         const calculated_response = await axios.post(
-          "https://ac40-2a01-e0a-585-d830-d0ab-574e-7d8c-ff73.eu.ngrok.io/calculator",
+          "https://airbnb-calculator-backend.herokuapp.com/calculator",
           {
             longitude: this.longitude,
             latitude: this.latitude,

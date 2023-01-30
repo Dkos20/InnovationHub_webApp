@@ -50,7 +50,7 @@ export default {
     submitHandler() {
       axios
         .post(
-          "https://ac40-2a01-e0a-585-d830-d0ab-574e-7d8c-ff73.eu.ngrok.io/login",
+          "https://airbnb-calculator-backend.herokuapp.com/login",
           this.formData
         )
         .then((response) => {
